@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        
+        h1{
+         text-align: center; 
+        }
+        .form-row{
+            display: flex;
+            gap: 20px;
+        }
+       
+
+.choices {
+    width: 300px; 
+}
+
+.choices__list--dropdown {
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+
+.choices {
+    width: 300px;
+}
+.choices__list--dropdown {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.hello{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 20px;
+    column-gap: 10px;
+    gap: 10px;
+}
+.category{
+    text-align: center;
+    display: flex;
+    margin-left: 400px;
+    margin-top: 29px;
+    margin-right: 60px;
+   
+   
+}
+
+.religion{
+    margin-left: 50px;
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-bottom: 180px;
+    column-gap: 10px;
+    gap: 20px;
+}
+.img{
+    margin-top: 1px;
+    margin-left: 1000px;
+    
+}
+.fam{
+     margin-top: 1px;
+}
+.exam{
+    margin-top: 1px;
+    margin-right: 40px;
+
+}
+.exam-row{
+    margin-top: 1vh;
+   
+    margin-left: 400px;
+}
+
+.pin{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.message{
+     margin-top: 5px;
+    margin-left: 400px;
+}
+    </style>
+</head>
+<body>
+    <h1><mark>student registration form </mark></h1>
+    <br>
+
+          <!--form-->
+    <form>
+        <div class="form-row">
+        <label>Name:</label>
+        <input type="text" placeholder="enter your name">
+        <label>Date of birth:</label>
+        <input type="date" >
+        
+        <label>Email:</label>
+        <input type="email" placeholder="enter your email">
+        
+        <label>password:</label>
+        <input type="password" placeholder="enter password">
+       
+        <label>Gender:</label>
+        <input type="radio" name="Gender" value="male">
+        male
+        <input type="radio" name="Gender" value="female">
+        female
+        </div>
+        
+        <div class="hello">
+
+        
+        <br> 
+        <label> correspondence Address:</label>
+       <textarea name="address" id="address" placeholder="enter your correspondence address"></textarea>
+
+
+       <label> permanent Address:</label>
+    <textarea name="address" id="address" placeholder="enter your permanent address"></textarea>
+
+     <label>Contact no.:</label>
+       <input type="text" placeholder="contact no.">
+
+ </div>
+ <div class="pin"> 
+    <label>Pin code:</label>
+<input type="type">
+
+ </div>
+<div class="message">
+    <label>MESSAGE:</label>
+    <textarea name="message" id="message" placeholder="message"></textarea>
+</div>
+      
+
+       <!--category-->
+ <div class="category">
+    <label>Select your category</label>
+    <select name="category">
+    <option value="General">General</option>
+    <option value="OBC">OBC</option>
+    <option value="SC">SC</option>
+    <option value="ST">ST</option>
+    <option value="other">other</option>
+    </select>
+ </div>
+     <!--religion-->
+ <div class="religion">
+    <label>Religion</label>
+    <select name="religion">
+    <option value="Hinduism">Hinduism</option>
+    <option value="Islam">Islam</option>
+    <option value="Christianity">Christianity</option>
+    <option value="Sikhism">Sikhism</option>
+    <option value="Buddhism">Buddhism</option>
+    <option value="Jainism">Jainism</option>
+    <option value="Judaism">Judaism</option>
+    <option value="Zoroastrianism">Zoroastrianism</option>
+    <option value="Shinto">Shinto</option>
+    <option value="Taoism">Taoism</option>
+    <option value="Confucianism">Confucianism</option>
+    <option value="Cao Dai">Cao Dai</option>
+    <option value="Tenrikyo">Tenrikyo</option>
+    <option value="Animism">Animism</option>
+    <option value="African Traditional Religions">African Traditional Religions</option>
+    <option value="Rastafarianism">Rastafarianism</option>
+    <option value="Humanism">Humanism</option>
+    <option value="Spiritualism">Spiritualism</option>
+    <option value="other">other</option>
+    </select>
+</div>
+    <!--examination-->
+    <div class="exam">
+   <h3> <label>Matriculation (10th class) Examination details:</label></h3>
+<label>Select examination board:</label>
+<select name="examination">
+    
+<option value="Hbse">Hbse</option>
+<option value="Cbse">Cbse</option>
+<option value="ICSE">ICSE</option>
+<option value="NIOS">NIOS</option>
+<option value="Up board">Up board</option>
+<option value="Bihar board">Bihar board</option>
+<option value="other">other</option>
+</select>
+    </div>
+<!--examination-->
+    <div class="exam-row" >
+   <h3> <label>Matriculation (12th class) Examination details:</label></h3>
+<label>Select examination board:</label>
+<select name="examination">
+    
+<option value="Hbse">Hbse</option>
+<option value="Cbse">Cbse</option>
+<option value="ICSE">ICSE</option>
+<option value="NIOS">NIOS</option>
+<option value="Up board">Up board</option>
+<option value="Bihar board">Bihar board</option>
+<option value="other">other</option>
+</select>
+ </div>
+
+ <label for="year">Year of Passing:</label>
+<select id="year" name="year">
+  <option value="">Select Year</option>
+</select>
+
+<script>
+const select = document.getElementById("year");
+const currentYear = new Date().getFullYear(); // 2026
+const startYear = 1980; 
+
+for (let year = currentYear; year >= startYear; year--) {
+  const option = document.createElement("option");
+  option.value = year;
+  option.textContent = year;
+  select.appendChild(option);
+}
+</script>
+ 
+
+ <div class="img">
+ <img src="img.png05.webp" height="200px" width="200px" ></div>
+
+ <div class="fam">
+ <label>Father's name:</label>
+ <input type="text">
+ 
+ <label>Contact no.:</label>
+ <input type="text">
+ <br><br>
+ <label>Mother's name:</label>
+ <input type="text">
+
+<label>Contact no.:</label>
+<input type="text">
+</div>
+
+
+        <br>
+       <br>
+       <!--hobbies-->
+       <div class="hobbies">
+     <label>Select your hobbies</label><br>
+<input type="checkbox" name="HOBBIES" value="drawing">
+<label for="drawing">Drawing</label><br>
+<input type="checkbox"  name="HOBBIES" value="Painting">
+<label for="Painting">Painting</label><br>
+<input type="checkbox" name="HOBBIES" value="Photography">
+<label for="Photography">Photography</label><br>
+<input type="checkbox" name="HOBBIES" value="Painting">
+<label for="Painting">Painting</label><br>
+<input type="checkbox" name="HOBBIES" value="Dancing">
+<label for="Dancing">Dancing</label><br>
+<input type="checkbox" name="HOBBIES" value="Singing">
+<label for="Singing">Singing</label><br>
+<input type="checkbox" name="HOBBIES" value="Blogging">
+<label for="Blogging">Blogging</label><br>
+<input type="checkbox" name="HOBBIES" value="Calligraphy">
+<label for="Calligraphy">Calligraphy</label><br>
+
+<textarea name="hobbies" id="hobbies" placeholder="enter your more hobbies"></textarea>
+       </div>
+<br>
+<br>
+
+
+
+       <!--select your country-->
+ 
+
+    <label for="country">Select your country</label>
+<select id="country" name="country">
+    <option value="">Select Country</option>
+</select>
+
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const countries = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+        "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+        "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+        "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria",
+        "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+        "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros",
+        "Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia",
+        "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica",
+        "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+        "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France",
+        "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada",
+        "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary",
+        "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+        "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait",
+        "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+        "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia",
+        "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius",
+        "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco",
+        "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand",
+        "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman",
+        "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+        "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+        "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
+        "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
+        "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+        "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
+        "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania", "Thailand",
+        "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+        "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+        "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
+        "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+    ];
+
+    const countrySelect = document.getElementById("country");
+
+    countries.forEach(function(country){
+        const option = document.createElement("option");
+        option.value = country;
+        option.text = country;
+        countrySelect.appendChild(option);
+    });
+
+    const choices = new Choices(countrySelect, {
+        searchEnabled: true,
+        itemSelectText: '',
+        shouldSort: false
+    });
+
+});
+</script>
+
+<br>
+
+
+<label for="state">Select your state</label>
+
+<select id="state"  >
+
+<option value="Select state">Select state</option>
+
+<!-- Include Choices.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+</select>
+
+<script>
+
+   document.addEventListener("DOMContentLoaded", function(){
+    const States = [
+        "Badakhshan", "Badghis", "Baghlan", "Balkh", "Bamyan", "Daykundi", "Farah", "Faryab", "Ghazni", "Ghor", "Helmand", "Herat", "Jowzjan", "Kabul", "Kandahar", "Kapisa", "Khost", "Kunar", "Kunduz", "Laghman", "Logar", "Nangarhar", "Nimruz", "Nuristan", "Paktia", "Paktika", "Panjshir", "Parwan", "Samangan", "Sar-e Pol", "Takhar", "Urozgan", "Wardak", "Zabul","Berat", "Diber", "Durres", "Elbasan", "Fier", "Gjirokaster", "Korce", "Kuke", "Lezhe", "Shkoder", "Tirane", "Vlore","Adrar", "Chlef", "Laghouat", "Oum El Bouaghi", "Batna", "Bejaia", "Biskra", "Bechar", "Blida", "Bouira", "Tamanrasset", "Tebessa", "Tlemcen", "Tiaret", "Tizi Ouzou", "Algiers", "Djelfa", "Jijel", "Setif", "Saida", "Skikda", "Sidi Bel Abbes", "Annaba", "Guelma", "Constantine", "Medea", "Mostaganem", "M'Sila", "Mascara", "Ouargla", "Oran", "El Bayadh", "Illizi", "Bordj Bou Arreridj", "Boumerdes", "El Tarf", "Tindouf", "Tissemsilt", "El Oued", "Khenchela", "Souk Ahras", "Tipaza", "Mila", "Ain Defla", "Naama", "Ain Temouchent", "Ghardaia", "Relizane", "Timimoun", "Bordj Badji Mokhtar", "Ouled Djellal", "Beni Abbes", "In Salah", "In Guezzam", "Touggourt", "Djanet", "El M'Ghair", "El Menia","Andorra la Vella", "Canillo", "Encamp", "Escaldes-Engordany", "La Massana", "Ordino", "Sant Julia de Loria","Bengo", "Benguela", "Bie", "Cabinda", "Cuando Cubango", "Cuanza Norte", "Cuanza Sul", "Cunene", "Huambo", "Huila", "Luanda", "Lunda Norte", "Lunda Sul", "Malanje", "Moxico", "Namibe", "Uige", "Zaire","Saint George", "Saint John", "Saint Mary", "Saint Paul", "Saint Peter", "Saint Philip", "Barbuda", "Redonda","Buenos Aires", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman", "Buenos Aires City","Aragatsotn", "Ararat", "Armavir", "Gegharkunik", "Kotayk", "Lori", "Shirak", "Syunik", "Tavush", "Vayots Dzor", "Yerevan","New South Wales", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia", "Australian Capital Territory", "Northern Territory", "Burgenland", "Carinthia", "Lower Austria", "Upper Austria", "Salzburg", "Styria", "Tyrol", "Vorarlberg", "Vienna", "Absheron", "Agdam", "Agdash", "Aghjabadi", "Agstafa", "Agsu", "Astara", "Babek", "Balakan", "Barda", "Beylagan", "Bilasuvar", "Dashkasan", "Fizuli", "Gadabay", "Gakh", "Ganja", "Gobustan", "Goranboy", "Goychay", "Goygol", "Hajigabul", "Imishli", "Ismayilli", "Jabrayil", "Jalilabad", "Julfa", "Kalbajar", "Khachmaz", "Khizi", "Khojaly", "Khojavend", "Kurdamir", "Lachin", "Lankaran", "Lerik", "Masally", "Mingachevir", "Naftalan", "Nakhchivan", "Neftchala", "Oghuz", "Ordubad", "Qabala", "Qakh", "Qazakh", "Quba", "Qubadli", "Qusar", "Saatly", "Sabirabad", "Salyan", "Samukh", "Shabran", "Shahbuz", "Shaki", "Shamakhi", "Shamkir", "Sharur", "Shirvan", "Shusha", "Siazan", "Sumqayit", "Tartar", "Tovuz", "Ujar", "Yardimli", "Yevlakh", "Zangilan", "Zaqatala", "Zardab", "Acklins", "Berry Islands", "Bimini", "Black Point", "Cat Island", "Central Abaco", "Central Andros", "Central Eleuthera", "Crooked Island", "East Grand Bahama", "Exuma", "Freeport", "Fresh Creek", "Governor's Harbour", "Green Turtle Cay", "Harbour Island", "High Rock", "Hope Town", "Inagua", "Kemps Bay", "Long Island", "Mangrove Cay", "Mayaguana", "Moore's Island", "North Abaco", "North Andros", "North Eleuthera", "Ragged Island", "Rock Sound", "San Salvador", "South Abaco", "South Andros", "South Eleuthera", "Spanish Wells", "West Grand Bahama", "Capital", "Muharraq", "Northern", "Southern", "Barisal", "Chattogram", "Dhaka", "Khulna", "Mymensingh", "Rajshahi", "Rangpur", "Sylhet", "Christ Church", "Saint Andrew", "Saint George", "Saint James", "Saint John", "Saint Joseph", "Saint Lucy", "Saint Michael", "Saint Peter", "Saint Philip", "Saint Thomas", "Brest", "Gomel", "Grodno", "Minsk", "Mogilev", "Vitebsk", "Antwerp", "East Flanders", "Flemish Brabant", "Limburg", "West Flanders", "Hainaut", "Liege", "Luxembourg", "Namur", "Walloon Brabant", "Brussels", "Belize", "Cayo", "Corozal", "Orange Walk", "Stann Creek", "Toledo", "Alibori", "Atacora", "Atlantique", "Borgou", "Collines", "Couffo", "Donga", "Littoral", "Mono", "Oueme", "Plateau", "Zou", "Bumthang", "Chhukha", "Dagana", "Gasa", "Haa", "Lhuentse", "Mongar", "Paro", "Pemagatshel", "Punakha", "Samdrup Jongkhar", "Samtse", "Sarpang", "Thimphu", "Trashigang", "Trashiyangtse", "Trongsa", "Tsirang", "Wangdue Phodrang", "Zhemgang", "Beni", "Chuquisaca", "Cochabamba", "La Paz", "Oruro", "Pando", "Potosi", "Santa Cruz", "Tarija","Federal District", "Acre", "Alagoas", "Amapa", "Amazonas", "Bahia", "Ceara", "Espirito Santo", "Goias", "Maranhao", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Para", "Paraiba", "Parana", "Pernambuco", "Piaui", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondonia", "Roraima", "Santa Catarina", "Sao Paulo", "Sergipe", "Tocantins", "Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan", "Northwest Territories", "Nunavut", "Yukon", "Aysen", "Antofagasta", "Araucania", "Arica y Parinacota", "Atacama", "Biobio", "Coquimbo", "Los Lagos", "Los Rios", "Magallanes", "Maule", "Metropolitana", "Nuble", "O'Higgins", "Tarapaca", "Valparaiso", "Anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong", "Guangxi", "Guizhou", "Hainan", "Hebei", "Heilongjiang", "Henan", "Hubei", "Hunan", "Inner Mongolia", "Jiangsu", "Jiangxi", "Jilin", "Liaoning", "Ningxia", "Qinghai", "Shaanxi", "Shandong", "Shanghai", "Shanxi", "Sichuan", "Tianjin", "Tibet", "Xinjiang", "Yunnan", "Zhejiang", "Amazonas", "Antioquia", "Arauca", "Atlantico", "Bolivar", "Boyaca", "Caldas", "Caqueta", "Casanare", "Cauca", "Cesar", "Choco", "Cordoba", "Cundinamarca", "Guainia", "Guaviare", "Huila", "La Guajira", "Magdalena", "Meta", "Narino", "Norte de Santander", "Putumayo", "Quindio", "Risaralda", "San Andres y Providencia", "Santander", "Sucre", "Tolima", "Valle del Cauca", "Vaupes", "Vichada", "Alajuela", "Cartago", "Guanacaste", "Heredia", "Limon", "Puntarenas", "San Jose", "Artemisa", "Camaguey", "Ciego de Avila", "Cienfuegos", "Granma", "Guantanamo", "Havana", "Holguin", "Isla de la Juventud", "Las Tunas", "Matanzas", "Mayabeque", "Pinar del Rio", "Sancti Spiritus", "Santiago de Cuba", "Villa Clara","Al Aasimah", "Hawalli", "Al Farwaniyah", "Al Ahmadi", "Al Jahra", "Mubarak Al-Kabeer", "Banskobystricky", "Bratislavsky", "Kosicky", "Nitriansky", "Presovsky", "Trenciansky", "Trnavsky", "Zilinsky", "Gorenjska", "Goriska", "Jugovzhodna Slovenija", "Koroska", "Obalno-Kraska", "Osrednjeslovenska", "Podravska", "Pomurska", "Savinjska", "Spodnjeposavska", "Zasavska", "Central", "Copperbelt", "Eastern", "Luapula", "Lusaka", "Muchinga", "Northern", "North-Western", "Southern", "Western", "Bulawayo", "Harare", "Manicaland", "Mashonaland Central", "Mashonaland East", "Mashonaland West", "Masvingo", "Matabeleland North", "Matabeleland South", "Midlands", "Bengo", "Benguela", "Bie", "Cabinda", "Cuando Cubango", "Cuanza Norte", "Cuanza Sul", "Cunene", "Huambo", "Huila", "Luanda", "Lunda Norte", "Lunda Sul", "Malanje", "Moxico", "Namibe", "Uige", "Zaire", "Addis Ababa", "Afar", "Amhara", "Benishangul-Gumuz", "Dire Dawa", "Gambela", "Harari", "Oromia", "Sidama", "Somali", "South West Ethiopia", "Southern Nations", "Tigray", "Central Equatoria", "Eastern Equatoria", "Jonglei", "Lakes", "Northern Bahr el Ghazal", "Unity", "Upper Nile", "Warrap", "Western Bahr el Ghazal", "Western Equatoria", "Aichi", "Akita", "Aomori", "Chiba", "Ehime", "Fukui", "Fukuoka", "Fukushima", "Gifu", "Gunma", "Hiroshima", "Hokkaido", "Hyogo", "Ibaraki", "Ishikawa", "Iwate", "Kagawa", "Kagoshima", "Kanagawa", "Kochi", "Kumamoto", "Kyoto", "Mie", "Miyagi", "Miyazaki", "Nagano", "Nagasaki", "Nara", "Niigata", "Oita", "Okayama", "Okinawa", "Osaka", "Saga", "Saitama", "Shiga", "Shimane", "Shizuoka", "Tochigi", "Tokushima", "Tokyo", "Tottori", "Toyama", "Wakayama", "Yamagata", "Yamaguchi", "Yamanashi","Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry", "Aceh", "Bali", "Banten", "Bengkulu", "Central Java", "Central Kalimantan", "Central Sulawesi", "East Java", "East Kalimantan", "East Nusa Tenggara", "Gorontalo", "Jakarta", "Jambi", "Lampung", "Maluku", "North Kalimantan", "North Maluku", "North Sulawesi", "North Sumatra", "Papua", "Riau", "Riau Islands", "Southeast Sulawesi", "South Kalimantan", "South Sulawesi", "South Sumatra", "West Java", "West Kalimantan", "West Nusa Tenggara", "West Papua", "West Sulawesi", "West Sumatra", "Alborz", "Ardabil", "Bushehr", "Chaharmahal and Bakhtiari", "East Azerbaijan", "Fars", "Gilan", "Golestan", "Hamadan", "Hormozgan", "Ilam", "Isfahan", "Kerman", "Kermanshah", "Khuzestan", "Kohgiluyeh and Boyer-Ahmad", "Kurdistan", "Lorestan", "Markazi", "Mazandaran", "North Khorasan", "Qazvin", "Qom", "Razavi Khorasan", "Semnan", "Sistan and Baluchestan", "South Khorasan", "Tehran", "West Azerbaijan", "Yazd", "Zanjan","Al Anbar", "Babil", "Baghdad", "Basra", "Dhi Qar", "Diyala", "Dohuk", "Erbil", "Karbala", "Kirkuk", "Maysan", "Muthanna", "Najaf", "Nineveh", "Qadisiyyah", "Saladin", "Sulaymaniyah", "Wasit", "Carlow", "Cavan", "Clare", "Cork", "Donegal", "Dublin", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Waterford", "Westmeath", "Wexford", "Wicklow", "Abruzzo", "Aosta Valley", "Apulia", "Basilicata", "Calabria", "Campania", "Emilia-Romagna", "Friuli Venezia Giulia", "Lazio", "Liguria", "Lombardy", "Marche", "Molise", "Piedmont", "Sardinia", "Sicily", "Trentino-Alto Adige", "Tuscany", "Umbria", "Veneto", "Clarendon", "Hanover", "Kingston", "Manchester", "Portland", "Saint Andrew", "Saint Ann", "Saint Catherine", "Saint Elizabeth", "Saint James", "Saint Mary", "Saint Thomas", "Aichi", "Akita", "Aomori", "Chiba", "Ehime", "Fukui", "Fukuoka", "Fukushima", "Gifu", "Gunma", "Hiroshima", "Hokkaido", "Hyogo", "Ibaraki", "Ishikawa", "Iwate", "Kagawa", "Kagoshima", "Kanagawa", "Kochi", "Kumamoto", "Kyoto", "Mie", "Miyagi", "Miyazaki", "Nagano", "Nagasaki", "Nara", "Niigata", "Oita", "Okayama", "Okinawa", "Osaka", "Saga", "Saitama", "Shiga", "Shimane", "Shizuoka", "Tochigi", "Tokushima", "Tokyo", "Tottori", "Toyama", "Wakayama", "Yamagata", "Yamaguchi", "Yamanashi","Ajloun", "Amman", "Aqaba", "Balqa", "Irbid", "Jerash", "Karak", "Ma'an", "Madaba", "Mafraq", "Tafilah", "Zarqa", "Akmola", "Aktobe", "Almaty", "Atyrau", "East Kazakhstan", "Jambyl", "Karaganda", "Kostanay", "Kyzylorda", "Mangystau", "North Kazakhstan", "Pavlodar", "Turkistan", "West Kazakhstan", "Almaty City", "Astana City", "Shymkent City", "Bishkek", "Batken", "Chuy", "Issyk-Kul", "Jalal-Abad", "Naryn", "Osh", "Talas", "Attapeu", "Bokeo", "Bolikhamsai", "Champasak", "Houaphanh", "Khammouane", "Luang Namtha", "Luang Prabang", "Oudomxay", "Phongsaly", "Salavan", "Savannakhet", "Sekong", "Vientiane", "Vientiane Prefecture", "Xaisomboun", "Xayabury", "Xekong", "Xieng Khouang", "Aizkraukle", "Aluksne", "Balvi", "Bauska", "Cesis", "Daugavpils", "Dobele", "Gulbene", "Jekabpils", "Jelgava", "Kraslava", "Kuldiga", "Liepaja", "Limbazi", "Ludza", "Madona", "Ogre", "Preili", "Rezekne", "Saldus", "Talsi", "Tukums", "Valka", "Valmiera", "Ventspils", "Akkar", "Baalbek-Hermel", "Beirut", "Beqaa", "Mount Lebanon", "Nabatieh", "North", "South", "Berea", "Butha-Buthe", "Leribe", "Mafeteng", "Maseru", "Mohale's Hoek", "Mokhotlong", "Qacha's Nek", "Quthing", "Thaba-Tseka", "Bomi", "Bong", "Gbarpolu", "Grand Bassa", "Grand Cape Mount", "Grand Gedeh", "Grand Kru", "Lofa", "Margibi", "Maryland", "Montserrado", "Nimba", "River Cess", "River Gee", "Sinoe","Ajdabiya", "Al Butnan", "Al Jabal al Akhdar", "Al Jabal al Gharbi", "Al Jafara", "Al Kufra", "Al Marj", "Al Marqab", "Al Wahat", "An Nuqat al Khams", "Az Zawiyah", "Benghazi", "Derna", "Ghat", "Misrata", "Murzuq", "Nalut", "Sabha", "Sirte", "Tripoli", "Wadi al Hayaa", "Wadi al Shatii", "Atsinanana", "Analamanga", "Amoron'i Mania", "Analanjirofo", "Androy", "Anosy", "Atsimo-Andrefana", "Atsimo-Atsinanana", "Betsiboka", "Boeny", "Bongolava", "Diana", "Haute Matsiatra", "Ihorombe", "Itasy", "Melaky", "Menabe", "Sava", "Sofia", "Vakinankaratra", "Vatovavy", "Fitovinany", "Balaka", "Blantyre", "Chikwawa", "Chiradzulu", "Chitipa", "Dedza", "Dowa", "Karonga", "Kasungu", "Likoma", "Lilongwe", "Machinga", "Mangochi", "Mchinji", "Mulanje", "Mwanza", "Mzimba", "Neno", "Nkhata Bay", "Nkhotakota", "Nsanje", "Ntcheu", "Ntchisi", "Phalombe", "Rumphi", "Salima", "Thyolo", "Zomba", "Johor", "Kedah", "Kelantan", "Kuala Lumpur", "Labuan", "Malacca", "Negeri Sembilan", "Pahang", "Penang", "Perak", "Perlis", "Putrajaya", "Sabah", "Sarawak", "Selangor", "Terengganu", "Addu", "Alif Alif", "Alif Dhaal", "Baa", "Dhaalu", "Faafu", "Gaafu Alif", "Gaafu Dhaalu", "Gnaviyani", "Haa Alif", "Haa Dhaalu", "Kaafu", "Laamu", "Lhaviyani", "Meemu", "Noonu", "Raa", "Seenu", "Shaviyani", "Thaa", "Vaavu", "Bamako", "Gao", "Kayes", "Kidal", "Koulikoro", "Menaka", "Mopti", "Segou", "Sikasso", "Taoudenit", "Tombouctou","Attard", "Balzan", "Birgu", "Birkirkara", "Birzebbuga", "Bormla", "Dingli", "Fgura", "Floriana", "Fontana", "Ghajnsielem", "Gharb", "Gharghur", "Ghasri", "Ghaxaq", "Gudja", "Gzira", "Hamrun", "Iklin", "Kalkara", "Kercem", "Kirkop", "Lija", "Luqa", "Marsa", "Marsaskala", "Marsaxlokk", "Mdina", "Mellieha", "Mgarr", "Mosta", "Mqabba", "Msida", "Mtarfa", "Munxar", "Nadur", "Naxxar", "Paola", "Pembroke", "Pieta", "Qala", "Qormi", "Qrendi", "Rabat", "Safi", "Saint Julian's", "Saint Lawrence", "Saint Lucia", "Saint Paul's Bay", "Sannat", "Santa Venera", "Siggiewi", "Sliema", "Swieqi", "Ta' Xbiex", "Tarxien", "Valletta", "Xaghra", "Xewkija", "Xghajra", "Zabbar", "Zebbug", "Zejtun", "Zurrieq", "Adrar", "Assaba", "Brakna", "Dakhlet Nouadhibou", "Gorgol", "Guidimaka", "Hodh Ech Chargui", "Hodh El Gharbi", "Inchiri", "Nouakchott-Nord", "Nouakchott-Ouest", "Nouakchott-Sud", "Tagant", "Tiris Zemmour", "Trarza", "Agalega Islands", "Black River", "Flacq", "Grand Port", "Moka", "Pamplemousses", "Plaines Wilhems", "Port Louis", "Riviere du Rempart", "Savanne", "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Mexico City", "Mexico State", "Michoacan", "Morelos", "Nayarit", "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas", "Anenii Noi", "Balti", "Basarabeasca", "Bender", "Briceni", "Cahul", "Calarasi", "Cantemir", "Causeni", "Chisinau", "Cimislia", "Criuleni", "Donduseni", "Drochia", "Dubasari", "Edinet", "Falesti", "Floresti", "Gagauzia", "Glodeni", "Hincesti", "Ialoveni", "Leova", "Nisporeni", "Ocnita", "Orhei", "Rezina", "Riscani", "Singerei", "Soldanesti", "Soroca", "Stefan Voda", "Straseni", "Taraclia", "Telenesti", "Ungheni","Arkhangai", "Bayan-Olgii", "Bayankhongor", "Bulgan", "Darkhan-Uul", "Dornod", "Dornogovi", "Dundgovi", "Govi-Altai", "Govisumber", "Khentii", "Khovd", "Khuvsgul", "Orkhon", "Ovorkhangai", "Ovorhangay", "Selenge", "Sukhbaatar", "Tov", "Uvs", "Umnugovi", "Ulaanbaatar", "Casablanca-Settat", "Beni Mellal-Khenifra", "Draa-Tafilalet", "Fes-Meknes", "Guelmim-Oued Noun", "Laayoune-Sakia El Hamra", "Marrakesh-Safi", "Oriental", "Rabat-Sale-Kenitra", "Souss-Massa", "Tanger-Tetouan-Al Hoceima", "Azad Kashmir", "Balochistan", "Gilgit-Baltistan", "Islamabad Capital Territory", "Khyber Pakhtunkhwa", "Punjab", "Sindh", "Abra", "Agusan del Norte", "Agusan del Sur", "Aklan", "Albay", "Antique", "Apayao", "Aurora", "Basilan", "Bataan", "Batanes", "Batangas", "Benguet", "Biliran", "Bohol", "Bukidnon", "Bulacan", "Cagayan", "Camarines Norte", "Camarines Sur", "Camiguin", "Capiz", "Catanduanes", "Cavite", "Cebu", "Compostela Valley", "Cotabato", "Davao de Oro", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental", "Dinagat Islands", "Eastern Samar", "Guimaras", "Ifugao", "Ilocos Norte", "Ilocos Sur", "Iloilo", "Isabela", "Kalinga", "La Union", "Laguna", "Lanao del Norte", "Lanao del Sur", "Leyte", "Maguindanao", "Marinduque", "Masbate", "Misamis Occidental", "Misamis Oriental", "Mountain Province", "Negros Occidental", "Negros Oriental", "Northern Samar", "Nueva Ecija", "Nueva Vizcaya", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Pampanga", "Pangasinan", "Quezon", "Quirino", "Rizal", "Romblon", "Samar", "Sarangani", "Siquijor", "Sorsogon", "South Cotabato", "Southern Leyte", "Sultan Kudarat", "Sulu", "Surigao del Norte", "Surigao del Sur", "Tarlac", "Tawi-Tawi", "Zambales", "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay","Baden-Württemberg", "Bavaria", "Berlin", "Brandenburg", "Bremen", "Hamburg", "Hesse", "Lower Saxony", "Mecklenburg-Vorpommern", "North Rhine-Westphalia", "Rhineland-Palatinate", "Saarland", "Saxony", "Saxony-Anhalt", "Schleswig-Holstein", "Thuringia", "Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Brittany", "Centre-Val de Loire", "Corsica", "Grand Est", "Hauts-de-France", "Île-de-France", "Normandy", "Nouvelle-Aquitaine", "Occitanie", "Pays de la Loire", "Provence-Alpes-Côte d'Azur", "Andalusia", "Aragon", "Asturias", "Balearic Islands", "Basque Country", "Canary Islands", "Cantabria", "Castile and León", "Castile-La Mancha", "Catalonia", "Extremadura", "Galicia", "La Rioja", "Madrid", "Murcia", "Navarre", "Valencian Community", "England", "Scotland", "Wales", "Northern Ireland", "Adygea", "Altai Republic", "Altai Krai", "Amur Oblast", "Arkhangelsk Oblast", "Astrakhan Oblast", "Bashkortostan", "Belgorod Oblast", "Bryansk Oblast", "Buryatia", "Chechen Republic", "Chelyabinsk Oblast", "Chukotka Autonomous Okrug", "Chuvash Republic", "Dagestan", "Ingushetia", "Irkutsk Oblast", "Ivanovo Oblast", "Jewish Autonomous Oblast", "Kabardino-Balkaria", "Kaliningrad Oblast", "Kalmykia", "Kaluga Oblast", "Kamchatka Krai", "Karachay-Cherkessia", "Karelia", "Kemerovo Oblast", "Khabarovsk Krai", "Khakassia", "Khanty-Mansi Autonomous Okrug", "Kirov Oblast", "Komi Republic", "Kostroma Oblast", "Krasnodar Krai", "Krasnoyarsk Krai", "Kurgan Oblast", "Kursk Oblast", "Leningrad Oblast", "Lipetsk Oblast", "Magadan Oblast", "Mari El", "Mordovia", "Moscow", "Moscow Oblast", "Murmansk Oblast", "Nenets Autonomous Okrug", "Nizhny Novgorod Oblast", "North Ossetia-Alania", "Novgorod Oblast", "Novosibirsk Oblast", "Omsk Oblast", "Orenburg Oblast", "Oryol Oblast", "Penza Oblast", "Perm Krai", "Primorsky Krai", "Pskov Oblast", "Rostov Oblast", "Ryazan Oblast", "Saint Petersburg", "Sakha", "Sakhalin Oblast", "Samara Oblast", "Saratov Oblast", "Smolensk Oblast", "Stavropol Krai", "Sverdlovsk Oblast", "Tambov Oblast", "Tatarstan", "Tomsk Oblast", "Tula Oblast", "Tuva", "Tver Oblast", "Tyumen Oblast", "Udmurtia", "Udmurtia", "Ulyanovsk Oblast", "Vladimir Oblast", "Volgograd Oblast", "Vologda Oblast", "Voronezh Oblast", "Yamalo-Nenets Autonomous Okrug", "Yaroslavl Oblast", "Zabaykalsky Krai"
+    ];
+ const stateSelect = document.getElementById("state");
+
+    States.forEach(function(state){
+        const option = document.createElement("option");
+        option.value = state;
+        option.text = state;
+        stateSelect.appendChild(option);
+    });
+
+    // Initialize Choices.js for search functionality
+    const choices = new Choices(stateSelect, {
+        searchEnabled: true,
+        itemSelectText: '',
+        shouldSort: false
+    });
+});
+</script>
+    
+</select>
+
+<button>SUBMIT</button>
+<input type="checkbox">
+</form>
+</body>
+</html>
